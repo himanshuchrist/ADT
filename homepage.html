@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homepage</title>
+<style>
+    /* Style for buttons */
+    button {
+      padding: 10px 20px;
+      background-color: #bae5d8; /* Blue color for buttons */
+      color: #080404; 
+      border: 1px solid #000000;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    /* Style for buttons on hover */
+    button:hover {
+      background-color: #86d8c0 
+    }
+
+    /* Style for the main container */
+    body {
+      font-family: Arial, sans-serif;
+      margin-top: 280px;
+      margin-left: 500px;
+      margin-bottom:350px;
+      padding: 0;
+      background-color: #bae5d8; /* Light gray background color */
+      /* display: flex; */
+      position: fixed ;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Center content vertically in the viewport */
+    }
+
+    /* Style for the button container */
+    body > button {
+      display: block;
+    }
+
+    /* Style for the div containers */
+    div {
+      background-color: rgb(255, 255, 255);
+      border: 1px solid #000000; /* Gray border for divs */
+      padding: 10px;
+      margin: 10px;
+    }
+
+    /* Style for the div container with display:none */
+    div[style="display:none"] {
+      display: none;
+    }
+
+    /* Style for the links inside buttons */
+    button a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    /* Style for the links inside buttons on hover */
+    button a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <center><h2 color="white">POS System</h2></center>
+  <div>
+	<button onclick="myFunction()">Cashbook</button>&nbsp
+	<button onclick="myFunction1()">Purchase</button>&nbsp
+	<button onclick="myFunction2()">Sales</button>&nbsp
+	<button onclick="myFunction3()">Customer</button><br>
+</div>
+	<div id="cashbook" style="display:none">
+		<button id="add" onClick="window.open('http://localhost:5001/add_cashbook')">Add Entry</button>&nbsp
+		<button id="view" onClick="window.open('http://localhost:5001/view_cashbook')">View Entries</button><br>
+	</div>
+	<div id="purchase" style="display:none">
+		<button id="purchase" onClick="myFunction4()">Supplier</button>&nbsp
+		<button id="purchase" onClick="myFunction5()">Purchase Bill</button>&nbsp
+		<button id="purchase" onClick="myFunction6()">Product</button><br>
+	</div>
+	
+	<div id="customer" style="display:none">
+		<button id="add_customer" onClick="window.open('http://localhost:5001/add_customer')">Add Customer</button>&nbsp
+		<button id="view_customer" onClick="window.open('http://localhost:5001/view_customer')">View Customer</button><br>
+	</div>
+	<div id="supplier" style="display:none">
+		<button id="add_supplier" onClick="window.open('http://localhost:5001/add_supplier')">Add Supplier</button>&nbsp
+		<button id="view_supplier" onClick="window.open('http://localhost:5001/view_supplier')">View Supplier</button><br>
+	</div>
+	<div id="purchasebill" style="display:none">
+		<button id="add_purchase_bill" onClick="window.open('http://localhost:5001/add_purchasebill')">Add Purchase Bill</button>&nbsp
+		<button id="view_purchase_bill" onClick="window.open('http://localhost:5001/view_purchasebill')">View Purchase Bills</button><br>
+	</div>
+	<div id="product" style="display:none">
+		<button id="add_product" onClick="window.open('http://localhost:5001/add_product')">Add Product</button>&nbsp
+		<button id="view_product" onClick="window.open('http://localhost:5001/view_product')">View Product</button>&nbsp
+	</div>
+	<div id="sales" style="display:none">
+		<button id="add_sales_bill" onClick="window.open('http://localhost:5001/add_sales')">Add Sales Bill</button>&nbsp
+		<button id="view_sales_bill" onClick="window.open('http://localhost:5001/view_sales')">View Sales Bills</button><br>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+function myFunction() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+
+  if (b.style.display === "none" ) {
+    a.style.display = "none";
+    b.style.display = "block";
+    c.style.display = "none";
+    d.style.display = "none";
+    e.style.display = 'none';
+    f.style.display = 'none';
+    g.style.display = 'none';
+    h.style.display = 'none';
+    i.style.display = 'none';
+  } else {
+    c.style.display = "none";
+  }
+}
+function myFunction1() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+  if (c.style.display === "none" ) {
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "block";
+    d.style.display = "none";
+    e.style.display = 'none';
+    f.style.display = 'none';
+    g.style.display = 'none';
+    h.style.display = 'none';
+    i.style.display = 'none';
+  } else {
+    c.style.display = "none";
+  }
+}
+function myFunction2() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+  if (d.style.display === "none" ) {
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "none";
+    d.style.display = "block";
+    e.style.display = 'none';
+    f.style.display = 'none';
+    g.style.display = 'none';
+    h.style.display = 'none';
+    i.style.display = 'none';
+  } else {
+    d.style.display = "none";
+  }
+}
+function myFunction3() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+  if (a.style.display === "none" ) {
+    a.style.display = "block";
+    b.style.display = "none";
+    c.style.display = "none";
+    d.style.display = "none";
+    e.style.display = 'none';
+    f.style.display = 'none';
+    g.style.display = 'none';
+    h.style.display = 'none';
+    i.style.display = 'none';
+  } else {
+    a.style.display = "none";
+  }
+}
+function myFunction4() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+  if (e.style.display === "none" ) {
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "block";
+    d.style.display = "none";
+    e.style.display = 'block';
+    f.style.display = 'none';
+    g.style.display = 'none';
+    h.style.display = 'none';
+    i.style.display = 'none';
+  } else {
+    e.style.display = "none";
+  }
+}
+function myFunction5() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+  if (f.style.display === "none" ) {
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "block";
+    d.style.display = "none";
+    e.style.display = 'none';
+    f.style.display = 'block';
+    g.style.display = 'none';
+    h.style.display = 'none';
+    i.style.display = 'none';
+  } else {
+    f.style.display = "none";
+  }
+}
+function myFunction6() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+  if (g.style.display === "none" ) {
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "block";
+    d.style.display = "none";
+    e.style.display = 'none';
+    f.style.display = 'none';
+    g.style.display = 'block';
+    h.style.display = 'none';
+    i.style.display = 'none';
+  } else {
+    g.style.display = "none";
+  }
+}
+function myFunction7() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+  if (h.style.display === "none" ) {
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "none";
+    d.style.display = "block";
+    e.style.display = 'none';
+    f.style.display = 'none';
+    g.style.display = 'none';
+    h.style.display = 'block';
+    i.style.display = 'none';
+  } else {
+    h.style.display = "none";
+  }
+}
+function myFunction8() {
+  var a = document.getElementById("customer");
+  var b = document.getElementById("cashbook");
+  var c = document.getElementById("purchase");
+  var d = document.getElementById("sales");
+  var e = document.getElementById("supplier");
+  var f = document.getElementById("purchasebill");
+  var g = document.getElementById("product");
+  var h = document.getElementById("salesbill");
+  var i = document.getElementById("salesman");
+  if (i.style.display === "none" ) {
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "none";
+    d.style.display = "block";
+    e.style.display = 'none';
+    f.style.display = 'none';
+    g.style.display = 'none';
+    h.style.display = 'none';
+    i.style.display = 'block';
+  } else {
+    i.style.display = "none";
+  }
+}
+</script>
